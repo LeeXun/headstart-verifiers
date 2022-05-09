@@ -1,7 +1,13 @@
 #!/usr/bin/env python
+
+import sys
+if sys.version_info[0] != 3:
+    print("\033[91m  Please use python 3.9!\033[0m")
+    sys.exit()
+
 from lib.merkle import MerkleVerifier
 import json
-import sys
+
 import os
 import requests
 import random
@@ -20,9 +26,10 @@ if __name__ == "__main__":
     print("")
     print("-- Verification of the presentation order of CNS 2022 --")
     print("")
-    
+
     if len(sys.argv) < 2 or sys.argv[1] == "":
-        print("\033[91m  command:\033[0m  \033[96mpython ./{0} 'your_random_code'\033[0m".format(os.path.basename((__file__))))
+        print("\033[91m  command:\033[0m  \033[96mpython ./{0} 'your_random_code'\033[0m".format(
+            os.path.basename((__file__))))
         sys.exit()
 
     random_code = sys.argv[1]
@@ -190,7 +197,8 @@ if __name__ == "__main__":
     print(
         "  The seed tooks more than \033[96m{0} minutes\033[0m to compute after you contributed at around {1}.".format(j, datetime.fromtimestamp(int(root_0_create_time))))
     print("  As a result, the adversaries CANNOT predict and bias the result!")
-    print("  Please check our paper for \033[96mMORE!\033[0m -> \033[92mhttps://www.ndss-symposium.org/ndss-paper/auto-draft-184/\033[0m")
+    print(
+        "  Please check our paper for \033[96mMORE!\033[0m -> \033[92mhttps://www.ndss-symposium.org/ndss-paper/auto-draft-184/\033[0m")
     print("")
     print(
         "  root_0   is at https://twitter.com/HeadStartRandom/status/{0}".format(root_0_status_id))
