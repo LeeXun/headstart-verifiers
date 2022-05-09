@@ -1,6 +1,6 @@
 # HeadStart Verifiers
 
-除了分組抽籤，您知道台大的選課和宿舍抽籤，其實也都可以更加公開透明嗎？
+除了分組抽籤，您知道台大的選課和宿舍抽籤，其實也都可以更加地公開透明嗎？
 社會中還有很多問題需要改變，從我們開始改革，邀請各位使用可驗證抽籤實現公平正義！
 
 Aside from randomly deciding order, do you know that the course selection system and dormitory allocation in NTU could also be more transparent by adopting HeadStart?
