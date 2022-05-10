@@ -26,8 +26,9 @@ docker-compose -f ./docker-compose.yml up
 
 ## How to verify
 
+Please note that char such as '$' and '`' has speical use in bash, so do escape them in the parameter of random code. 
 ```sh
-python ./verify_presentation_order_cns2022.py "your_random_code"
+python ./verify_presentation_order_cns2022.py 'your_random_code'
 ```
 
 This script will verify:
