@@ -1,8 +1,11 @@
 # HeadStart Verifiers
 
+<img width="439" alt="image" src="https://user-images.githubusercontent.com/12629194/167589026-52c7b5fb-2fae-4361-a02d-c69ff30c3ebe.png">
+
 除了分組抽籤，您知道台大的選課和宿舍抽籤，其實也都可以更加地公開透明嗎？
 社會中還有很多問題需要改變，從我們開始改革，邀請各位使用可驗證抽籤實現公平正義！
 
+Secure randomness should be unpredictable, bias-resistant and verifiable.
 Aside from randomly deciding order, do you know that the course selection system and dormitory allocation in NTU could also be more transparent by adopting HeadStart?
 
 HeadStart is a participatory randomness generation protocol that we presented at [NDSS 2022](https://www.ndss-symposium.org/ndss-paper/auto-draft-184/). People can contribute "random code" to influnce and verify the randomness is truly unpredictable and bias-resistant to ensure the fairness.
@@ -13,7 +16,6 @@ HeadStart is a participatory randomness generation protocol that we presented at
 
 ```sh
 pip install -r ./requirements.txt
-python ./verify_presentation_order_cns2022.py "your_random_code"
 ```
 
 Or you can run by [Docker](https://docs.docker.com/get-docker/).
@@ -22,6 +24,15 @@ Or you can run by [Docker](https://docs.docker.com/get-docker/).
 docker-compose -f ./docker-compose.yml up
 ```
 
-Paper links:
-- https://yihchun.com/papers/ndss22.pdf
+## How to verify
+
+```sh
+python ./verify_presentation_order_cns2022.py "your_random_code"
+```
+
+This script will verify:
+1. Your random_code is included in the Merkle tree to make the tree root "unpredictable".
+2. The "unpredictable" root is in the verifiable delay functions (VDFs) to make the result seed "bias-resistant".
+
+For more details, please refer to our paper:
 - https://www.ndss-symposium.org/ndss-paper/auto-draft-184/
