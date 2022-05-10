@@ -11,7 +11,7 @@ import json
 import os
 import requests
 import random
-from datetime import datetime
+from datetime import datetime, timedelta
 # chiavdf 1.0.6
 from chiavdf import create_discriminant, verify_wesolowski
 
@@ -97,8 +97,9 @@ if __name__ == "__main__":
     form_size = 100
     lambda_security_bits = 1024
 
+    slightly_eariler_than_start_time = datetime.isoformat(datetime.fromisoformat(event["start_time"]) - timedelta(minutes=5))
     url = "{0}/api/v1/delayproofs?after={1}".format(
-        host, event["start_time"].replace("+", "%2b"))
+        host, slightly_eariler_than_start_time.replace("+", "%2b"))
     response = requests.request("GET", url)
     if response.status_code != 200:
         print(response.text)
@@ -145,6 +146,7 @@ if __name__ == "__main__":
         discriminant = create_discriminant(
             discriminant_challenge, lambda_security_bits)
         result_bytes = bytes.fromhex(proof["result"])
+
         is_valid = verify_wesolowski(
             str(discriminant),
             initial_el,
