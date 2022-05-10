@@ -1,0 +1,14 @@
+
+version: '3.1'
+services:
+  verify_presentation_order_cns2022:
+    build:
+      context: ./.
+      dockerfile: ./Dockerfile
+    command: [
+      "python",
+      "/headstart/verify_presentation_order_cns2022.py",
+      "75dtusm3mif9cwr2lp4dvox1a72s7oor7xmxd8dol7ras8s9968pj5i9fo0e7usj"
+    ]
+    volumes:
+      - ./:/headstart

@@ -16,6 +16,12 @@ pip install -r ./requirements.txt
 python ./verify_presentation_order_cns2022.py "your_random_code"
 ```
 
+Or you can run by [Docker](https://docs.docker.com/get-docker/).
+
+```sh
+docker-compose -f ./docker-compose.yml up
+```
+
 Paper links:
 - https://yihchun.com/papers/ndss22.pdf
 - https://www.ndss-symposium.org/ndss-paper/auto-draft-184/
