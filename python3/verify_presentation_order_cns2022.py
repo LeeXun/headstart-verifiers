@@ -7,7 +7,7 @@ if sys.version_info[0] != 3:
 
 from lib.merkle import MerkleVerifier
 import json
-
+import urllib
 import os
 import requests
 import random
@@ -52,11 +52,9 @@ if __name__ == "__main__":
     print("")
     print("  Verifying inclusion proof ...")
     print("")
-
-    url = "{0}/api/v1/inclusionproofs".format(host)
-    response = requests.request("GET", url, params={
-        "random_code": random_code,
-    })
+    
+    url = "{0}/api/v1/inclusionproofs?random_code={1}".format(host, urllib.parse.quote_plus(random_code))
+    response = requests.request("GET", url)
     if response.status_code != 200:
         print(response.text)
         sys.exit()
