@@ -34,5 +34,6 @@ This script will verify:
 1. Your random_code is included in the Merkle tree to make the tree root "unpredictable".
 2. The "unpredictable" root is in the verifiable delay functions (VDFs) to make the result seed "bias-resistant".
 
+## Our Paper
 For more details, please refer to our paper:
 - https://www.ndss-symposium.org/ndss-paper/auto-draft-184/
