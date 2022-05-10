@@ -1,8 +1,8 @@
 # HeadStart Verifiers
 
-<img width="439" alt="image" src="https://user-images.githubusercontent.com/12629194/167589026-52c7b5fb-2fae-4361-a02d-c69ff30c3ebe.png">
+<img width="421" alt="image" src="https://user-images.githubusercontent.com/12629194/167590726-25e55d5e-35b1-4eaf-b75b-e0d70f12ce1d.png">
 
-除了分組抽籤，您知道台大的選課和宿舍抽籤，其實也都可以更加地公開透明嗎？
+安全的隨機抽籤，是確保沒有任何人能夠預知、控制結果。除了分組抽籤，您知道台大的選課和宿舍抽籤，其實也都可以更加地公開透明嗎？
 社會中還有很多問題需要改變，從我們開始改革，邀請各位使用可驗證抽籤實現公平正義！
 
 Secure randomness should be unpredictable, bias-resistant and verifiable.
